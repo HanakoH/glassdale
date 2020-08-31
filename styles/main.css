@@ -1,0 +1,27 @@
+.officersContainer {
+    display: flex;
+    flex: 3;
+    flex-wrap: wrap;
+}
+
+.card-officer {
+    background-color: rgb(208, 203, 203);
+    border: 1px dashed blue;
+    margin: 1em;
+    flex-basis: 25%;
+    padding: 0em 1em;
+}
+
+.criminalsContainer {
+    display: flex;
+    flex: 3;
+    flex-wrap: wrap;
+}
+
+.card-criminal {
+    background-color: rgb(208, 203, 203);
+    border: 1px dashed red;
+    margin: 1em;
+    flex-basis: 25%;
+    padding: 0em 1em;
+}
