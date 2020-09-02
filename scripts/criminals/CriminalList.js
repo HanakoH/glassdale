@@ -7,9 +7,21 @@ eventHub.addEventListener("crimeChosen", event => {
     if (event.detail.crimeThatWasChosen !== "0") {
         const matchingCriminals = useCriminals().filter(currentCriminal => {
             return currentCriminal.conviction === event.detail.crimeThatWasChosen
-        })
-       render(matchingCriminals)
+        }) 
+      render(matchingCriminals)
     } else render(useCriminals());
+})
+
+eventHub.addEventListener("officerSelected", event => {
+    // console.log(event)
+    if (event.detail.officer !== "0" ) {
+        const officerName = event.detail.officer
+        const criminals = useCriminals()
+        const matchingCriminals = criminals.filter(criminalObject => {
+            return criminalObject.arrestingOfficer === officerName
+        }) 
+        render(matchingCriminals)
+    } else render(useCriminals()) 
 })
 
 export const CriminalList = () => {
