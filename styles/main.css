@@ -1,3 +1,10 @@
+.filters {
+    display: flex;
+    flex: 3;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .officersContainer {
     display: flex;
     flex: 3;
