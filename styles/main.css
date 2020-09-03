@@ -5,6 +5,17 @@
     justify-content: space-around;
 }
 
+.noteFormContainer {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+    padding: 0em 1em;
+}
+
+.headerTwo {
+    text-align: center;
+}
+
 .officersContainer {
     display: flex;
     flex: 3;
