@@ -12,6 +12,13 @@
     padding: 0em 1em;
 }
 
+.card-note {
+    background-color: rgb(208, 203, 203);
+    margin: 1em;
+    flex-basis: 25%;
+    padding: 0em 1em;
+}
+
 .headerTwo {
     text-align: center;
 }
