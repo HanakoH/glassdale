@@ -1,10 +1,12 @@
-const eventHub = document.querySelector("#main")
+import { AlibiDialog } from "./AlibiDialog.js"
+
+const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("click", event => {
     if (event.target.id.startsWith("associates--")){
-        const [prefix, criminalId] = event.targer.id.split("--")
+        const [prefix, criminalId] = event.target.id.split("--")
 
-        const alibiEvent = new CustomEvent("associatesCLicked", {
+        const alibiEvent = new CustomEvent("associatesClicked", {
             detail: {
                 chosenCriminal: criminalId
             }
@@ -22,6 +24,7 @@ export const CriminalHTML = (criminal) => {
          <p>Term start: ${new Date(criminal.incarceration.start).toLocaleDateString('en-US')}</p>
          <p>Term end: ${new Date(criminal.incarceration.end).toLocaleDateString('en-US')}</p>
          <button id="associates--${criminal.id}">Alibis</button>
+         ${AlibiDialog(criminal.id)}
      </section>
      `
  }

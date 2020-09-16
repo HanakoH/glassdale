@@ -1,12 +1,35 @@
 import { useCriminals } from "./CriminalProvider.js";
 
-const eventHub = document.querySelector("#main")
+const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("associatesClicked", event => {
     //display all associates for criminal
 
-    const targetCriminal = useCriminals().find(criminal => {
-        criminal.id === parseInt(event.detail.chosenCriminal)
+    const smoothCriminal = useCriminals().find(criminal => {
+        return criminal.id === parseInt(event.detail.chosenCriminal)
+        //parseInt turn a string into a number (Integer)
     })
 
+    const alibiTarget = document.querySelector(`.alibiDialog--${smoothCriminal.id}`);
+    
+    if (alibiTarget.innerHTML === ""){
+        alibiTarget.innerHTML = `${
+            smoothCriminal.known_associates.map(associate => {
+                return `
+                <h4 class="alibiKnown">${associate.name}</h4>
+                <div>${associate.alibi}</div>
+                `
+            }).join("")
+        }`
+    } else {
+        alibiTarget.innerHTML = ""
+    }
+    
+
 })
+
+export const AlibiDialog = (id) => {
+    return `
+        <span class="alibiDialog--${id}"></span>
+    `
+}

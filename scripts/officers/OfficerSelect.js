@@ -20,14 +20,6 @@ eventHub.addEventListener("change", changeEvent => {
     }
 })
 
-export const OfficerList = () => {
-    getOfficers()
-    .then(()=>{
-        const officerArray = useOfficers();
-        addOfficersToDOM(officerArray);
-    })
-}
-
 export const OfficerSelect = () => {
     getOfficers()
     .then(officersData => {
