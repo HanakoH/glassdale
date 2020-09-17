@@ -15,7 +15,6 @@ export const NoteList = () => {
     })
 }
 
-
 const render = noteCollection => {
     const domElement = document.querySelector(".notesContainer");
 

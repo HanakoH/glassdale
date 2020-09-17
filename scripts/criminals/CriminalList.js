@@ -32,7 +32,6 @@ export const CriminalList = () => {
     })
 }
 
-
 const render = criminalCollection => {
     const domElement = document.querySelector(".criminalsContainer");
 

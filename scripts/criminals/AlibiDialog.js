@@ -24,8 +24,6 @@ eventHub.addEventListener("associatesClicked", event => {
     } else {
         alibiTarget.innerHTML = ""
     }
-    
-
 })
 
 export const AlibiDialog = (id) => {
