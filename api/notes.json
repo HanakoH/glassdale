@@ -1,10 +1,10 @@
 {
   "notes": [
     {
-      "noteText": "Put the criminal in the cell. But he ran off wit mah gearl.",
+      "noteText": "Henlo?",
       "noteDate": "2020-09-21",
-      "suspect": "Loy Gibson",
-      "id": 1
+      "suspectId": 7,
+      "id": 4
     }
   ]
 }

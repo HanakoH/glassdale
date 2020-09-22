@@ -12,18 +12,21 @@ eventHub.addEventListener("click", clickEvent => {
 
         const noteContent = document.getElementById('noteForm-text')
         const noteDate = document.getElementById('note-date')
-        const suspectName = document.getElementById('note-suspect')
+        const suspectId = document.getElementById('note-suspect')
 
         // Make a new object representation of a note
-        const newNote = {
-            noteText: noteContent.value,
-            noteDate: noteDate.value,
-            suspect: suspectName.value
-        }
-        console.log(newNote)
+        if(suspectId.value !== "0"){
+            const newNote = {
+                noteText: noteContent.value,
+                noteDate: noteDate.value,
+                suspectId: parseInt(suspectId.value)
+            }
         // Change API state and application state
         saveNote(newNote)
         .then(() => render(useCriminals()));
+        }else {
+            window.alert("Choose a Suspect");
+        }
     }
 })
 
@@ -36,7 +39,7 @@ const render = (criminalArray) => {
                      <option value="0">Please select a criminal...</option>
                         ${
                             criminalArray.map(criminal => {
-                            return `<option value="${criminal.name}">${criminal.name}</option>`
+                            return `<option value="${criminal.id}">${criminal.name}</option>`
                             })
                         }
                      </select>
