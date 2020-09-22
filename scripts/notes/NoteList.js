@@ -8,14 +8,13 @@ eventHub.addEventListener("noteStateChanged", event => {
     render(useNotes(), useCriminals())
 })
 
-const render = (noteArray, suspects) => {
-    const domElement = document.querySelector(".notesContainer");
+const domElement = document.querySelector(".notesContainer");
 
-    let HTMLArray = noteArray.map(singleNote => {
-        singleNote.suspectObj = suspects.find(suspect => {
-            return suspect.id === parseInt(singleNote.suspectId)
+const render = (noteArray, suspects) => {
+    let HTMLArray = noteArray.map((singleNote) => {
+        singleNote.suspectObj = suspects.find((suspect) => {
+            return suspect.id === singleNote.suspectId
         })
-        debugger
         return NoteHTML(singleNote);
     })
     domElement.innerHTML = HTMLArray.join("");

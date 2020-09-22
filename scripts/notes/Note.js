@@ -1,4 +1,5 @@
 export const NoteHTML = (noteObj) => {
+    console.log(noteObj.suspectObj.name)
     return `
     <section id="note-${noteObj.id}" class="card-note">
          <p>${noteObj.noteText}</p>
@@ -7,3 +8,4 @@ export const NoteHTML = (noteObj) => {
      </section>
      `
  }
+ 
